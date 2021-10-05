@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/bootstrap.min.css">
+        <link  rel="stylesheet" href="/custom_style.css">
+    </head>
+    <body class="background">
+        <div class="card position-absolute top-50 start-50 translate-middle shadow mb-5 bg-white width-auto"
+            style="margin-top: 20px;">
+            <div class="card-content" style="width: 1000px;">
+                <div class="card-header-blue">
+                    <div class="card-header-secondary-text">Mineski Bank - Seychelles </div>
+                    <div class="card-header-title">Pending Loans</div>
+                    </div>
+                <div class="card-body" style="height:400px; overflow-y:auto;">
+
+        <% if(branch == 1){ %> 
+            <h2>Branch : Head Office</h2>
+
+        <% } else{%>
+        <h2>Branch ID: <%= branch%></h2>
+        <% } %> 
+       <br>
+       
+        <table class="table table-bordered">
+            <thead>
+                <th>Initiated Date</th>
+                <% if(branch == 1){ %> 
+                 <th>Branch ID</th>   
+                 <% } %> 
+                <th>Loan ID</th>
+                <th>Loan Plan Chosen</th>
+                <th>Loan Amount</th>
+                <th>Customer ID</th>
+                <th>Linked Savings  Account</th>
+                <th>Monthly Installment</th>
+                <th></th>
+                <th></th>
+                <th hidden></th>
+            
+                
+            
+            </thead>
+            <tbody>
+                <% for(var i=0; i<loans.length;i++) {%>
+                <tr>
+                    <form action="" method="POST">
+                    <td><%=(JSON.stringify(loans[i].created_date)).toString().substr(1,10) %></td>
+
+                    <% if(branch == 1){ %> 
+                        <td> <%= loans[i].branch_id %></td>   
+                    <% } %> 
+                    <td><%= loans[i].loan_id %></td>
+                    <td><%= loans[i].plan_name %></td>
+                    <td><%= loans[i].loan_amount%></td>
+                    <td><%= loans[i].customer_id%></td>
+                    <td><%= loans[i].account_id %></td>
+                    <td> Rs. <%= loans[i].loan_installment%></td>
+                    <td> <input type="submit" value="Approve" name="type" class="button" style="width: 90px;"></td>
+                    <td> <input type="submit" value="Reject" name="type" class="button" style="width: 90px;"></td>
+                    <td hidden><input type="number" name="loan_id" value="<%= loans[i].loan_id %>" hidden></td>
+                </form>
+                </tr>
+                
+                <%}%>
+                </tbody>
+            </table>
+        <br>
+        </div>
+        <div class="container" style="margin-bottom: 10px;">
+            <form action="/" method="GET">
+                <input type="submit" value="Home" class="button" style="background-color: #ff1744; width:200px;">
+            </form>
+        </div>
+
+        </div>
+        </div>
+                
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link  rel="stylesheet" href="/custom_style.css">
+    <title>Document</title>
+</head>
+<body class="background" >
+    <div  class="card position-absolute top-50 start-50 translate-middle shadow mb-5 bg-white width-auto " style="margin-top: 200px;" >
+        <div class="card-content" style="width: 800px;">
+            <div class="card-header-blue">
+                <div class="card-header-secondary-text">Mineski Bank - Seychelles </div>
+                <div class="card-header-title">Individual Customer Creation</div>
+                </div>
+            <div class="card-body">
+    
+    <form action="/employee/customer/individual" method="POST">
+        <label for="" class="text-box-label">Full Name</label>
+        <input type="text" class="form-control w-80" id="full_name" name="full_name" style="border-color: #113F86;" required>
+  
+
+        <label for="" class="text-box-label">Address</label>
+        <input type="text" class="form-control w-80" id="address" name="address" style="border-color: #113F86;" required>
+
+
+        </row><label for="" class="text-box-label">National ID</label>
+        <input type="text" class="form-control w-50" id="national_ID" name="national_ID" style="border-color: #113F86;" required>
+ 
+
+        <label for="" class="text-box-label">Date of Birth</label>
+        <input type="date" id="date_of_birth"  class="form-control w-50" name="date_of_birth" max='<%=dob%>'  style="border-color: #113F86;" required>
+       
+
+        <label for="" class="text-box-label">Residential Contact Number</label>
+        <input type="text" id="residential_contact_no" class="form-control w-50" style="border-color: #113F86;" name="residential_contact_no"
+            required>
+
+        <label for="" class="text-box-label">Private Contact Number</label>
+        <input type="text" id="personal_contact_no" class="form-control w-50" name="personal_contact_no" required style="border-color: #113F86;">
+
+
+        <label for="" class="text-box-label">Date Joined</label>
+        <input type="date" id="date_joined" name="date_joined" class="form-control w-50"  max='<%=today%>' style="border-color: #113F86;" required>
+
+        <label for="" class="text-box-label">Email Address</label>
+        <input type="email" id="email" name="email" class="form-control w-100" style="background-color:#6ACBF6;border-color: #113F86;" required>
+
+        <label for="" class="text-box-label">Password</label>
+        <input type="password" class="form-control w-100" style="background-color:#6ACBF6;border-color: #113F86;" id="password" name="password" required>
+
+        <label for="" class="text-box-label">Confirm Password</label>
+        <input type="password" class="form-control w-100" style="background-color:#6ACBF6;border-color: #113F86;" id="confirm_password" name="confirm_password" required>
+        <br>
+        <input type="submit" class="button" style="width: 200px;">
+    </form>
+    <br>
+
+    <form action="/" method="GET">
+        <input type="submit" class="button" style="background-color: #ff1744; width:200px;" value="Home">
+    </form>
+            </div></div></div>
+</body>
+</html>

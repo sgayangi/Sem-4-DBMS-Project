@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/bootstrap.min.css">
+        <link  rel="stylesheet" href="/custom_style.css">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+
+    <body class="background">
+        <div  class="card position-absolute top-50 start-50 translate-middle shadow mb-5 bg-white width-auto "  style="margin-top: 10px;">
+            <div class="card-content" style="width: 1000px;">
+                <div class="card-header-blue">
+                    <div class="card-header-secondary-text">Mineski Bank - Seychelles </div>
+                    <div class="card-header-title">Transfer Money</div>
+                    </div>
+                <div class="card-body">
+                    <%if (savingsIds.length==0){%>
+                    
+                    <h5 style="color:#ff1744; "> You do not have any accounts viable for money transfers.
+                        <br> Please visit your nearest branch to open an account. </h5>
+                    
+                    <%} else{%>
+        <form action="" method="POST" id="transferMoney">
+
+            <select class="form-select"  name="initiating_account_id" form="transferMoney" class="form-control w-50" style="border-color: #113F86;">
+                <% for(var j=0; j< savingsIds.length; j++) {%> 
+                <option value="<%= savingsIds[j].savings_account_id || savingsIds[j].checking_account_id %>" > <%=  savingsIds[j].savings_account_id || savingsIds[j].checking_account_id%> </option>
+                <% } %> 
+            </select>
+           
+            <label for="" class="text-box-label">Receivers Account Number</label>
+            <input type="number" name="receiving_account_id" class="form-control w-50" style="border-color: #113F86;" required>
+
+
+            <label for="" class="text-box-label">Amount</label>
+            <input type="text"  name="transaction_amount" class="form-control w-50" style="border-color: #113F86;" required>
+           
+
+            <br>
+            <input type="submit" class="button" style=" width:200px;">
+        </form>
+        <%}%>
+
+        <br>
+
+        <form action="/" method="GET">
+            <input type="submit" value="Home" class="button" style="background-color: #ff1744; width:200px;">
+        </form>
+        </div></div></div>
+
+    </body>
+
+</html>

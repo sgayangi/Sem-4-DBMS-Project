@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/bootstrap.min.css">
+        <link  rel="stylesheet" href="/custom_style.css">
+    </head>
+    <body class="background">
+        <div  class="card position-absolute top-50 start-50 translate-middle shadow mb-5 bg-white width-auto "  style="margin-top: 100px;">
+            <div class="card-content" style="width: 800px;">
+                <div class="card-header-blue">
+                    <div class="card-header-secondary-text">Mineski Bank - Seychelles </div>
+                    <div class="card-header-title">Normal Loan Creation</div>
+                    </div>
+                <div class="card-body">
+        
+        <form action = "/employee/loan" method="POST">
+            <table>
+                <thead>
+                    <th>Select:</th>
+                    <th>Loan Plan Name</th>
+                    <th>Interest Rate</th>
+                    <th>Loan Period (in months) </th>
+                </thead>
+
+                <tbody>
+                    <% for(var i=0; i < loan_plans.length; i++){ %>
+                    <tr>
+                        <td><input type="radio" name="loan_plan_id" id="loan_plan_id"
+                                value="<%= loan_plans[i].loan_plan_id %>" required></td>
+
+                        <td><input type="text" value="<%= loan_plans[i].plan_name %>" readonly></td>
+
+                        <td><input type="text" value="<%= loan_plans[i].interest_rate %>" name="interest_rate" readonly></td>
+
+                        <td><input type="text" name="loan_period_in_months" id="loan_period_in_months"
+                                value="<%= loan_plans[i].loan_period_in_months %>" readonly></td>
+
+                    </tr>
+                    <br>
+                    <% } %>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <label class="text-box-label">Savings Accounts (Select one)</label>
+            <br>
+            <% for(var i=0; i < savings_accounts.length; i++){ %>
+                <input type="radio" name="account_id" id="account_id" value="<%= savings_accounts[i].savings_account_id %>" required> <%=savings_accounts[i].savings_account_id%>
+                <br>
+            <%}%>
+            <br>
+
+            <label class="text-box-label">Loan Amount</label>
+            <input type="text" id="loan_amount" name="loan_amount" class="form-control w-25" style="border-color: #113F86;" required>
+            <br>
+            <input type="submit" class="button" style="width: 200px;">
+        </form>
+        <br>
+        <form action="/" method="GET">
+            <input type="submit" value="Home" class="button" style="width: 200px; background-color:#ff1744;">
+        </form>
+                </div></div></div>
+    </body>
+</html>

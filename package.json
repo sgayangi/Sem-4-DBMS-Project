@@ -1,0 +1,38 @@
+{
+  "name": "Bank-Transaction-and-Loan-Processing-System",
+  "version": "1.0.0",
+  "description": "INSTALLING",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-mineski/Bank-Transaction-and-Loan-Processing-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Team-mineski/Bank-Transaction-and-Loan-Processing-System/issues"
+  },
+  "homepage": "https://github.com/Team-mineski/Bank-Transaction-and-Loan-Processing-System#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "config": "^3.3.2",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-mysql-session": "^2.1.5",
+    "joi": "^17.3.0",
+    "joi-password-complexity": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "mysql": "^2.18.1",
+    "node-localstorage": "^2.1.6",
+    "node-uuid": "^1.4.8",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7"
+  }
+}

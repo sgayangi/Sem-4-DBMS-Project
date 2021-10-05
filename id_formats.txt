@@ -1,0 +1,32 @@
+loans: delete "type" from database
+
+standard: 
+
+branch id / plan id - normal autoincrement starting from 1
+
+individual customer - 1 + 5 digits      - 100001
+
+corporate customer - 2 + 5 digits       - 200001
+
+
+loan installment id - 3 + 7 digits
+
+normal loan - 4 + 5 digits
+
+online loan - 5 + 5 digits
+
+
+savings account - 6 + 5 digits   =  600001
+
+checking account - 7 + 5 digits  =  700001
+
+fixed deposit - 8 + 5 digits  = 800001
+
+
+
+deposit id - 9 + 7 digits   = 70000001
+
+withdrawal id - 9 + 7 digits   = 80000001
+
+transaction id - 9 + 7 digits   = 90000001
+

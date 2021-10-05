@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/bootstrap.min.css">
+        <link  rel="stylesheet" href="/custom_style.css">
+    </head>
+
+        <body class="background">
+            <div  class="card position-absolute top-50 start-50 translate-middle shadow mb-5 bg-white width-auto "  style="margin-top: 100px;">
+                <div class="card-content" style="width: 1000px;">
+                    <div class="card-header-blue">
+                        <div class="card-header-secondary-text">Mineski Bank - Seychelles </div>
+                        <div class="card-header-title">Customer Home Page</div>
+                        
+                            <form action="/logout" method="POST">
+                                <input type="submit" value="Logout" class="btn btn-outline-primary float-right"> 
+                            </form>
+                        
+                
+                        </div>
+                    <div class="card-body">
+        <div class="container">
+
+       
+     
+       
+        <div class="row" style="margin-bottom: 30px; margin-top: 30px;">
+            <h4>My Profile</h4>
+            <form action="/customer/profile" method="get">
+                <input type="submit" class="btn btn-outline-primary" value="View">
+            </form>
+
+        </div>
+
+        <div class="row" style="margin-bottom: 30px;">
+            <h4>My Accounts</h4>
+            <div class="col-3">
+                <form action="/customer/account/savings_accounts" method="get">
+                    <input type="submit" class="btn btn-outline-primary" value = " Savings Accounts">
+                </form>
+        
+            </div>
+
+            <div class="col-3">
+                  
+                <form action="/customer/account/checking_accounts" method="get">
+                    <input type="submit"class="btn btn-outline-primary"  value=" Checking Accounts">
+                </form>
+
+            </div>
+            <div class="col-3">
+                
+                <form action="/customer/account/fixed_deposits" method="get">
+                    <input type="submit" class="btn btn-outline-primary" value=" Fixed Deposits">
+                </form>
+                
+            </div>
+    
+        </div>
+
+        
+        <div class="row" style="margin-bottom: 30px;">
+            <h4>ATM</h4>
+            <div class="col-3">
+                <form action="/customer/account/withdraw_money" method="get">
+                    <input type="submit" value="Withdraw Money" class="btn btn-outline-primary">
+                </form>
+
+            </div>
+
+            <div class="col-3">
+                <form action="/customer/account/deposits" method="get">
+                    <input type="submit" value="Deposit Money" class="btn btn-outline-primary">
+                </form>
+
+            </div>
+
+        
+            
+
+        </div>
+
+        <div class="row" style="margin-bottom: 30px;">
+            <h4>Money Transfer </h4>
+
+            <div class="col-5">
+                <form action="/customer/transfer_money/savings_account" method="get">
+                    <input type="submit" value="Transfer Money to a Savings Account" class="btn btn-outline-primary" >
+                </form>
+
+            </div>
+
+            <div class="col-3">
+                <form action="/customer/transfer_money/checking_account" method="get">
+                    <input type="submit" value="Transfer Money to a Checking Account" class="btn btn-outline-primary">
+                </form>
+
+            </div>
+            
+
+        </div>
+
+        <div class="row" style="margin-bottom: 30px;">
+            <h4>  Online Loan Application </h4>
+            <form action="/customer/loan/online" method="get">
+                <input type="submit" value="Apply" class="btn btn-outline-primary">
+            </form>
+
+
+        </div>
+
+
+        
+
+
+        </div>
+
+        
+    </div></div></div>
+    </body>
+</html>

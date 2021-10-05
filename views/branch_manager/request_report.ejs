@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/bootstrap.min.css">
+        <link  rel="stylesheet" href="/custom_style.css">
+    </head>
+    <body class="background">
+        <div  class="card position-absolute top-50 start-50 translate-middle shadow mb-5 bg-white width-auto "  style="margin-top: 30px;">
+            <div class="card-content" style="width: 800px;">
+                <div class="card-header-blue">
+                    <div class="card-header-secondary-text">Mineski Bank - Seychelles </div>
+                    <div class="card-header-title">Request Report</div>
+                    </div>
+                <div class="card-body">
+        
+        <!-- /branch_manager/report -->
+        <label class="text-box-label">Transactions   </label>
+        <form action="/branch_manager/report" method="POST" id="monyearFilter">
+            <select class="form-select"  name="month" form="monyearFilter" class="form-control w-50" style="border-color: #113F86;"required>
+                <option value="1" >  January </option>
+                <option value="2" >  February </option>
+                <option value="3" >  March  </option>
+                <option value="4" >  April  </option>
+                <option value="5" >  May </option>
+                <option value="6" >  June </option>
+                <option value="7" > July </option>
+                <option value="8" >  August </option>
+                <option value="9" >  September </option>
+                <option value="10" >  October </option>
+                <option value="11" >  November  </option>
+                <option value="12" >  December  </option>
+
+                
+            </select>
+
+            <label class="text-box-label">Year   </label>
+            <input type="text" id="year" name="year" class="form-control w-50" style="border-color: #113F86;" required>
+            <br>
+            <input type="submit" value="Generate Transactions Report" name="type" class="button" style="width: auto;">
+            <br>
+            <br>
+
+            <input type="submit" value="Generate Late Loan Installment Report" name="type" class="button" style="width: auto;">
+        </form>
+        <br>
+
+        <form action="/" method="GET">
+            <input type="submit" value="Home" class="button" style="background-color: #ff1744; width:200px;">
+        </form>
+        </div></div></div>
+    </body>
+</html>

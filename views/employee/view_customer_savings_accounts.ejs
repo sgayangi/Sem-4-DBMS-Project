@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/bootstrap.min.css">
+        <link  rel="stylesheet" href="/custom_style.css">
+    </head>
+    <body class="background">
+        <div  class="card position-absolute top-50 start-50 translate-middle shadow mb-5 bg-white width-auto "  style="margin-top: 100px;">
+            <div class="card-content" style="width: 1000px;">
+                <div class="card-header-blue">
+                    <div class="card-header-secondary-text">Mineski Bank - Seychelles </div>
+                    <div class="card-header-title">Savings Accounts</div>
+                    </div>
+                <div class="card-body">
+        
+
+        <% if (savings_accounts.length>0) {%>
+        <table class="table table-bordered">
+            <thead>
+                <th>Savings Account ID</th>
+                <th>Branch Name</th>
+                <th>Bank Balance</th>
+                <th>Plan Name</th>
+                <th>No. of Remaining Withdrawals</th>
+
+            </thead>
+            <tbody>
+                <% for(var i=0; i<savings_accounts.length;i++) {%>
+                <tr>
+                    <td><%= savings_accounts[i].savings_account_id%></td>
+                    <td><%= savings_accounts[i].branch_name%></td>
+                    <td><%= savings_accounts[i].bank_balance%></td>
+                    <td><%= savings_accounts[i].plan_name%></td>
+                    <td><%= savings_accounts[i].no_of_withdrawals_remaining%></td>
+                </tr>
+                <%}%>
+
+                    </tbody>
+                    
+                </table>
+                <form action="/employee/loan" method="GET">
+                    <input type="submit" value="Create a loan" class="button" style="width: 300px;">
+                </form>
+                <br>
+                <%} else{%>
+                <div class="text-box-label">No savings accounts created.</div>
+                <%}%>
+                <br>
+                <form action="/employee/savings_account" method="GET">
+                    <input type="submit" value="Open New Savings Account" class="button" style="width: 300px;">
+                </form>
+                <br>
+
+                <form action="/" method="GET">
+                    <input type="submit" value="Home" class="button" style="width: 200px; background-color:#ff1744;">
+                </form>
+                </div></div></div>
+    </body>
+</html>

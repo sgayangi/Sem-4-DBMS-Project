@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>New Savings Account</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/bootstrap.min.css">
+        <link  rel="stylesheet" href="/custom_style.css">
+        
+    </head>
+
+    <body class="background">
+        <div  class="card position-absolute top-50 start-50 translate-middle shadow mb-5 bg-white width-auto "  style="margin-top: 200px;">
+            <div class="card-content" style="width: 1000px;">
+                <div class="card-header-blue">
+                    <div class="card-header-secondary-text">Mineski Bank - Seychelles </div>
+                    <div class="card-header-title">Savings Account Creation Page</div>
+                    </div>
+                <div class="card-body">
+
+        <form action="/employee/savings_account" method="POST">
+
+           
+            
+            <table class="table table-bordered">
+                <thead>
+                    <th scope="col">Select:</th>
+                    <th scope="col">Plan Name</th>
+                    <th scope="col">Interest Rate</th>
+                    <th scope="col">Minimum Required Account Balance</th>
+                </thead>
+                
+                <tbody>
+                    <% if(level == 4) { %>
+                    <% for(var i=0; i < plans.length; i++){ %>
+                    <tr>
+                        <td><input type="radio" name="savings_plan_id" id="savings_plan_id" value="<%= plans[i].savings_plan_id %>" required></td>
+
+                        <td><input type="text" value="<%= plans[i].plan_name %>" readonly></td>
+
+                        <td><input type="text" value="<%= plans[i].interest_rate %>" readonly></td>
+
+                        <td><input type="text" name="minimum_balance" id="minimum_balance" value="<%= plans[i].minimum_required_balance %>" readonly></td>
+                                
+                    </tr>
+                    <% } %>
+                   <% }else{ %> 
+                    <tr>
+                        <td><input type="radio" name="savings_plan_id" id="savings_plan_id" value="<%= plans[2].savings_plan_id %>" checked required></td>
+
+                        <td><input type="text" value="<%= plans[2].plan_name %>" readonly></td>
+
+                        <td><input type="text" value="<%= plans[2].interest_rate %>" readonly></td>
+
+                        <td><input type="text" name="minimum_balance" id="minimum_balance" value="<%= plans[2].minimum_required_balance %>" readonly></td>
+                                
+                    </tr>
+                    <% } %> 
+                </tbody>
+            </table>
+
+            
+            <br>
+            <br>
+
+            <div class="text-box-label">Account ID: <%=id%></div>
+            <br>
+
+            <label for="" class="text-box-label">Customer ID  </label>
+            <input type="text" id="customer_id" name="customer_id" class="form-control w-50" style="border-color: #113F86;" value=<%=customer_id%> readonly required>
+            
+            <label for="" class="text-box-label">Date</label>
+            <input type="date" id="started_date" name="started_date" class="form-control w-50" style="border-color: #113F86;" max=<%=date%> required>
+            
+            <label for="" class="text-box-label">Deposit</label>
+            <input type="number" id="bank_balance" name="bank_balance" class="form-control w-50" style="border-color: #113F86;" min="document.getElementById('minimum_balance').value;" required>
+
+            <label for="" class="text-box-label">Max Withdrawal Limit</label>
+            <input type="text" id="max_withdrawal_limit" name="max_withdrawal_limit" class="form-control w-50" style="border-color: #113F86;" required>
+            <br>
+
+            <label for="" class="text-box-label">Source of Funds</label>
+            <input type="text" id="source_of_funds" name="source_of_funds" class="form-control w-50" style="border-color: #113F86;" required> 
+
+            <input type="text" id="no_of_withdrawals_remaining" name="no_of_withdrawals_remaining" value='5' readonly hidden>
+            <br>
+            <input type="text" id="branch_id" name="branch_id" value=<%=branch_id%> hidden required>
+            <br>
+
+            <input type="submit" class="button" style="width: 200px;">
+        </form>
+        <br>
+        <form action="/" method="GET">
+            <input type="submit" value="Home" class="button" style="width: 200px; background-color:#ff1744;">
+        </form>
+                </div></div></div>
+    </body>
+
+</html>
